@@ -5,7 +5,8 @@ class RedditSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      board: ''
+      board: '',
+      limit: 20,
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -13,6 +14,8 @@ class RedditSearch extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
+    let board = this.state.board;
+    this.props.getBoard(board);
     console.log('__STATE__', this.state);
   }
   
@@ -24,14 +27,9 @@ class RedditSearch extends React.Component {
     return (
       <div>
         <h4>Enter Reddit Board Name</h4>
-        
         <form onSubmit={this.handleSubmit}>
-          <input
-            type='text'
-            // value = {this.state.board}
-            onChange = {this.handleChange}
-          />
-          <input type='submit'></input>
+          <input type='text' onChange={this.handleChange} />
+          <input type='submit' />
         </form>
       </div>
       )
