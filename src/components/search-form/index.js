@@ -6,7 +6,7 @@ class RedditSearch extends React.Component {
     super(props);
     this.state = {
       board: '',
-      limit: 20,
+      limit: '',
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -20,16 +20,24 @@ class RedditSearch extends React.Component {
   }
   
   handleChange(e) {
-    this.setState({board: e.target.value});
+    e.target.id === 'boardName' ? this.setState({board:e.target.value}) : this.setState({limit: e.target.value})
   }
   
   render() {
     return (
       <div>
-        <h4>Enter Reddit Board Name</h4>
         <form onSubmit={this.handleSubmit}>
-          <input type='text' onChange={this.handleChange} />
+    
+        <p>Enter Reddit Board Name</p>
+          <input type='text' id='boardName' onChange={this.handleChange} />
+    
+        <p>Enter Number of Posts You Wish to See</p>
+          <input type = 'number' id='limit' onChange={this.handleChange} />
+    
+        <br/> <br/>
+    
           <input type='submit' />
+
         </form>
       </div>
       )

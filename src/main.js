@@ -12,9 +12,9 @@ class App extends React.Component {
   
   getBoard(board,limit) {
     let searchFormLimit = limit || 10;
-    superagent.get(`https://reddit.com/r/${board}.json?limit=${searchFormLimit}`)
-      .then(results => console.log({results}))
-      .catch(console.log);
+    superagent.get(`https://www.reddit.com/r/${board}.json?limit=${searchFormLimit}`)
+      .then(results => console.log(results.body.data))
+      .catch(console.log)
   }
   
   render() {
