@@ -15,8 +15,8 @@ class RedditSearch extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let board = this.state.board;
-    this.props.getBoard(board);
-    console.log('__STATE__', this.state);
+    let limit = this.state.limit;
+    this.props.getBoard(board, limit);
   }
   
   handleChange(e) {

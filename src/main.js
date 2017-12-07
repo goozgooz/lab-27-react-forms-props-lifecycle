@@ -14,7 +14,7 @@ class App extends React.Component {
     let searchFormLimit = limit || 10;
     superagent.get(`https://www.reddit.com/r/${board}.json?limit=${searchFormLimit}`)
       .then(results => console.log(results.body.data))
-      .catch(console.log)
+      .catch(console.log) // need to add class of error here 
   }
   
   render() {
