@@ -11,17 +11,19 @@ class SearchResults extends React.Component {
         <h2>{this.props.board}</h2>
         <ul>
           {this.props.posts.map((post,i) => {
-            <li> 
-              {console.log(post.data.title)}
+            <li key={i}> 
+              {console.log(post.data.title)}  
               {post.data.title}
-              </li>
+            </li>
           })
         }
-          </ul>
-        </div>
+        </ul>
+      </div>
       )
     }
 }
 
 
 export default SearchResults;
+
+
