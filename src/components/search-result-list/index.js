@@ -10,12 +10,11 @@ class SearchResults extends React.Component {
       <div>
         <h2>{this.props.board}</h2>
         <ul>
-          {this.props.posts.map((post,i) => {
+          {this.props.posts.map((post,i) => 
             <li key={i}> 
-              {console.log(post.data.title)}  
               {post.data.title}
             </li>
-          })
+          )
         }
         </ul>
       </div>
